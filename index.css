@@ -1,0 +1,64 @@
+@keyframes menuAnimationOut {
+    0% {gap: 0; transform: scale(0);}
+    100% {gap: 15em; transform: scale(1);}
+}
+@keyframes menuAnimationIn {
+    0% {gap: 15em; transform: scale(1);}
+    100% {gap: 0; transform: scale(0);}
+}
+
+body {
+    margin: 0;
+    background-color: #12244e;
+    background-image: radial-gradient(circle, #19326d, #040914);
+}
+img {
+    user-select: none;
+}
+
+#center {
+    height: 100svh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#image {
+    z-index: 1;
+    max-width: 12vmin;
+    max-height: 12vmin;
+    transition: max-width 400ms, max-height 400ms;
+}
+#image:hover {
+    max-width: 15vmin;
+    max-height: 15vmin;
+}
+#image a img{
+    height: 100%;
+    width: 100%;
+}
+
+
+#menu {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    position: absolute;
+    z-index: 0;
+    animation-name: menuAnimation;
+    animation-play-state: paused;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+.option {
+    max-height: 10vmin;
+    max-width: 10vmin;
+}
+
+.option a img {
+    max-height: 100%;
+    max-width: 100%;
+}
