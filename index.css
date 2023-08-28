@@ -1,10 +1,10 @@
 @keyframes menuAnimationOut {
-    0% {gap: 0; transform: scale(0);}
-    100% {gap: 15em; transform: scale(1);}
+    0% {column-gap: 0svw; row-gap:0svh; transform: scale(0);}
+    100% {column-gap: 20svw; row-gap:20svh; transform: scale(1);}
 }
 @keyframes menuAnimationIn {
-    0% {gap: 15em; transform: scale(1);}
-    100% {gap: 0; transform: scale(0);}
+    0% {column-gap: 20svw; row-gap:20svh; transform: scale(1);}
+    100% {column-gap: 0svw; row-gap:0svh; transform: scale(0);}
 }
 
 body {
