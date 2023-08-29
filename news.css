@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #172f66;
+    background-image: radial-gradient(circle, #2c58bf, #122652);
+}
+
+.page-heading h1 {
+    font-size: 5em;
+    font-family: cursive;
+    color: white;
+    margin-top: 0.3em;
+}
+
+article {
+    display: flex;
+    justify-content: center;
+}

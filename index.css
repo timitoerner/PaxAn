@@ -1,16 +1,21 @@
+:root {
+    --gap-w: 30svw;
+    --gap-h: 30svh;
+}
+
 @keyframes menuAnimationOut {
     0% {column-gap: 0svw; row-gap:0svh; transform: scale(0);}
-    100% {column-gap: 20svw; row-gap:20svh; transform: scale(1);}
+    100% {column-gap: var(--gap-w); row-gap: var(--gap-h); transform: scale(1);}
 }
 @keyframes menuAnimationIn {
-    0% {column-gap: 20svw; row-gap:20svh; transform: scale(1);}
+    0% {column-gap: var(--gap-w); row-gap: var(--gap-h); transform: scale(1);}
     100% {column-gap: 0svw; row-gap:0svh; transform: scale(0);}
 }
 
 body {
     margin: 0;
-    background-color: #12244e;
-    background-image: radial-gradient(circle, #19326d, #040914);
+    background-color: #172f66;
+    background-image: radial-gradient(circle, #2c58bf, #122652);
 }
 img {
     user-select: none;
@@ -19,20 +24,15 @@ img {
 #center {
     height: 100svh;
     display: flex;
-    align-content: center;
     align-items: center;
     justify-content: center;
 }
 
 #image {
     z-index: 1;
-    max-width: 12vmin;
-    max-height: 12vmin;
+    max-width: 4em;
+    max-height: 4em;
     transition: max-width 400ms, max-height 400ms;
-}
-#image:hover {
-    max-width: 15vmin;
-    max-height: 15vmin;
 }
 #image a img{
     height: 100%;
@@ -46,7 +46,7 @@ img {
     grid-template-rows: auto auto;
     position: absolute;
     z-index: 0;
-    animation-name: menuAnimation;
+    animation-name: none;
     animation-play-state: paused;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
@@ -54,8 +54,13 @@ img {
 }
 
 .option {
-    max-height: 10vmin;
-    max-width: 10vmin;
+    padding: 0.5em;
+    max-height: 4em;
+    max-width: 4em;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20%;
 }
 
 .option a img {
