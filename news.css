@@ -1,19 +1,53 @@
+:root {
+    --primary-color: #bf932b;
+}
+
 body {
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     background-color: #172f66;
     background-image: radial-gradient(circle, #2c58bf, #122652);
+    font: normal normal 15px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
 }
 
-.page-heading h1 {
-    font-size: 5em;
-    font-family: cursive;
-    color: white;
-    margin-top: 0.3em;
-}
-
-article {
+.page-heading{
+    width: 100%;
     display: flex;
     justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.article-heading {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.article-text p {
+    max-width: 50rem;
+}
+.article-img {
+    float: left;
+}
+.article-date {
+    
+}
+
+.article-background {
+    padding: 2rem;
+    margin-bottom: 5rem;
+    background-color: #0008;
+    border-radius: 3rem;
+    transition: background-color 200ms, border-radius 100ms;
+}
+.article-background:hover {
+    background-color: #0006;
+    border-radius: 1rem;
 }
