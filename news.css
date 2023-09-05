@@ -29,6 +29,15 @@ body {
     align-items: center;
     color: rgb(205, 205, 205);
 }
+.article-background {
+    padding: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    max-height: fit-content;
+    overflow-y: hidden;
+    background-color: #0008;
+    border-radius: 1rem;
+}
 .article-heading {
     font-weight: bold;
     color: var(--primary-color);
@@ -50,14 +59,4 @@ body {
     background-color: #0005;
     padding: 0.5rem;
     border-radius: 0.5rem;
-}
-
-.article-background {
-    padding: 2rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    max-height: fit-content;
-    overflow-y: hidden;
-    background-color: #0008;
-    border-radius: 1rem;
 }
