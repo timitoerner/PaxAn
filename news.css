@@ -1,12 +1,23 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
     --primary-color: #bf932b;
 }
 
 body {
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background-color: #172f66;
+    background-image: -o-radial-gradient(circle, #2c58bf, #122652);
     background-image: radial-gradient(circle, #2c58bf, #122652);
     font: normal normal 15px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
 }
@@ -14,8 +25,12 @@ body {
 .page-heading{
     width: 100%;
     margin-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
     color: var(--primary-color);
@@ -24,15 +39,24 @@ body {
 .article {
     width: 100%;
     margin-bottom: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: rgb(205, 205, 205);
 }
 .article-background {
     padding: 2rem;
     margin-right: 1rem;
     margin-left: 1rem;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
     max-height: fit-content;
     overflow-y: hidden;
     background-color: #0008;

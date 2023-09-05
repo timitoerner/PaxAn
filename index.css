@@ -1,37 +1,65 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
     --gap-w: 30svw;
     --gap-h: 30svh;
 }
 
+@-webkit-keyframes menuAnimationOut {
+    0% {-webkit-column-gap: 0svw;column-gap: 0svw; row-gap:0svh; -webkit-transform: scale(0); transform: scale(0);}
+    100% {-webkit-column-gap: var(--gap-w);column-gap: var(--gap-w); row-gap: var(--gap-h); -webkit-transform: scale(1); transform: scale(1);}
+}
+
 @keyframes menuAnimationOut {
-    0% {column-gap: 0svw; row-gap:0svh; transform: scale(0);}
-    100% {column-gap: var(--gap-w); row-gap: var(--gap-h); transform: scale(1);}
+    0% {-webkit-column-gap: 0svw;-moz-column-gap: 0svw;column-gap: 0svw; row-gap:0svh; -webkit-transform: scale(0); transform: scale(0);}
+    100% {-webkit-column-gap: var(--gap-w);-moz-column-gap: var(--gap-w);column-gap: var(--gap-w); row-gap: var(--gap-h); -webkit-transform: scale(1); transform: scale(1);}
+}
+@-webkit-keyframes menuAnimationIn {
+    0% {-webkit-column-gap: var(--gap-w);column-gap: var(--gap-w); row-gap: var(--gap-h); -webkit-transform: scale(1); transform: scale(1);}
+    100% {-webkit-column-gap: 0svw;column-gap: 0svw; row-gap:0svh; -webkit-transform: scale(0); transform: scale(0);}
 }
 @keyframes menuAnimationIn {
-    0% {column-gap: var(--gap-w); row-gap: var(--gap-h); transform: scale(1);}
-    100% {column-gap: 0svw; row-gap:0svh; transform: scale(0);}
+    0% {-webkit-column-gap: var(--gap-w);-moz-column-gap: var(--gap-w);column-gap: var(--gap-w); row-gap: var(--gap-h); -webkit-transform: scale(1); transform: scale(1);}
+    100% {-webkit-column-gap: 0svw;-moz-column-gap: 0svw;column-gap: 0svw; row-gap:0svh; -webkit-transform: scale(0); transform: scale(0);}
 }
 
 body {
     margin: 0;
     background-color: #172f66;
+    background-image: -o-radial-gradient(circle, #2c58bf, #122652);
     background-image: radial-gradient(circle, #2c58bf, #122652);
 }
 img {
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 #center {
     height: 100svh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #image {
     z-index: 1;
     max-width: 4em;
     max-height: 4em;
+    -webkit-transition: max-width 400ms, max-height 400ms;
+    -o-transition: max-width 400ms, max-height 400ms;
     transition: max-width 400ms, max-height 400ms;
 }
 #image a img{
@@ -41,24 +69,59 @@ img {
 
 
 #menu {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto auto;
     grid-template-columns: auto auto;
+    -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
     position: absolute;
     z-index: 0;
-    animation-name: none;
-    animation-play-state: paused;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: none;
+            animation-name: none;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     visibility: hidden;
+}
+
+
+#menu > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+
+#menu > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+
+#menu > *:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+}
+
+
+#menu > *:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
 }
 
 .option {
     padding: 0.5em;
     max-height: 4em;
     max-width: 4em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20%;
 }
